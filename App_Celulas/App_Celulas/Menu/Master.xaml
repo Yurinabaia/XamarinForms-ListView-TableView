@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:CarregarPagina="clr-namespace:App_Celulas.Paginas"
+             mc:Ignorable="d"
+             x:Class="App_Celulas.Menu.Master">
+    <!--Master é o menu lateral do android e Ios-->
+    <!--Achar pasta das paginas xmlns:CarregarPagina="clr-namespace:App_Celulas.Paginas"-->
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Orientation="Vertical">
+                <Button Text="Text Cell" Clicked="IrTextCell"/>
+                <Button Text="Imagem Cell" Clicked="IrImagemCell"/>
+                <Button Text="Entry Cell" Clicked="IrEntryCell"/>
+                <Button Text="Switch Cell" Clicked="IrSwitchCell"/>
+                <Button Text="View Cell 'O mais usado' " Clicked="IrViewCell"/>
+                <Label Text="Componenste" />
+                <Button Text="ListView" Clicked="IrListView"/>
+                <Button Text="ListView Button" Clicked="IrListViewButton"/>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <CarregarPagina:TextCellPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

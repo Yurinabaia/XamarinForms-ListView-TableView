@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App_Celulas.Paginas.SwitchCellPage">
+    <ContentPage.Content>
+        <!--Todo TableView Possuir um TableView, TableRoot e TableSection-->
+        <TableView>
+            <TableView.Root>
+                <TableSection Title="Configurações">
+                    <SwitchCell On="True" Text="Botão de Backup automatico"/>
+                    <SwitchCell On="True" Text="Salvar Senha"/>
+                    <!--Primeiro dado a ser marcado é o On para saber 
+                    se o dado vai está marcado ou não-->
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

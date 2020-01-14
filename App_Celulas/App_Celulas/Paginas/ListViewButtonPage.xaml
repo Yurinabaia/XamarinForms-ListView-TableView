@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App_Celulas.Paginas.ListViewButtonPage">
+    <ContentPage.Content>
+        <!--Todos list view possuir os camos
+        ListView, ListView.ItemTemplate, DataTemplate-->
+        <!-- HasUnevenRows="True" Serve para colocar definir um valor automatico para nossa linhas
+        da tabela, caso não queira deixar atumatico usar-se o RowHeight="" definindo um valor 
+        das linhas-->
+        <ListView x:Name="ListaFuncionario" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Nome}"/>
+                            <Label Text=" - "/>
+                            <Label Text="{Binding Cargo}"/>
+                            <Button Text="Ferias" Clicked="FeriasAction" CommandParameter="{Binding .}"/>
+                            <!--Para passar um botão no ListView é utilizado os parametros
+                           Text="Ferias" Clicked="" CommandParameter=""
+                            o Clicked é uma NOME dado para evento do botão
+                            e o CommandParameter="" vai ser outro evento que vai gerar a ação do 
+                            Botão-->
+                            <!--O Binding . significa que vamos usar todos os recursos da classe
+                            Funcionarios, como Nome, Cargo e Foto-->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

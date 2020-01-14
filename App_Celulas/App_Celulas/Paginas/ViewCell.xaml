@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App_Celulas.Paginas.ViewCell">
+    <ContentPage.Content>
+        <!--O ViewCell é utilizado tanto em ListView quanto para TableView-->
+        <!-- HasUnevenRows="True" Serve para colocar definir um valor automatico para nossa linhas
+        da tabela, caso não queira deixar atumatico usar-se o RowHeight="" definindo um valor 
+        das linhas-->
+        <ScrollView>
+        <StackLayout>
+            <!--Todo ListView possuir um ListViewTemplate e DataTemplate-->
+            <ListView x:Name="ListaFuncionario" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--O view Ceel podemos customizar nossa Layout da maneira que quisermos-->
+                            <ViewCell>
+                                <StackLayout Padding="20" Orientation="Horizontal">
+                                    <Label Text="{Binding Nome}" FontSize="Body"  TextColor="Brown"/>
+                                    <Label Text=" - " />
+                                    <Label Text="{Binding Cargo} " FontAttributes="Bold"/>
+                                </StackLayout>
+                            </ViewCell>
+                    </DataTemplate>   
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--Todo TableView possuir um TableView, TableViewRoot e TableSection-->
+            <TableView>
+                <TableRoot>
+                     <TableSection Title="Cadastro">
+                            <!--O ViewCell é utilizado para customizar nosso TableView de maneira 
+                         que quisermos-->
+                            <ViewCell>
+                                <StackLayout Padding="20" Orientation="Vertical">
+                                    <Label Text="Comentario" FontSize="Body"  TextColor="Brown" HorizontalOptions="Center" HorizontalTextAlignment="Start"/>
+                                    <Editor HeightRequest="500" WidthRequest="500" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </ViewCell>
+                     </TableSection>    
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

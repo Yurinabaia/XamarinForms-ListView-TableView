@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App_Celulas.Paginas.TextCellPage">
+    <ContentPage.Content>
+        <!--Todos list view possuir os camos
+        ListView, ListView.ItemTemplate, DataTemplate-->
+        <ListView x:Name="ListaFuncionario">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}" Detail="{Binding Cargo}" TextColor="Black" DetailColor="Blue">
+                        <!--O TextCell dar a possibilidade de apresenta um ou dois texto
+                        dentro da celula-->
+                        <!--Os elementos Detail e DetailColor tem a possibilidade
+                        de colocar um texto abaixo do outro e colocar a cor dos
+                        texto o TextColor irá colocar cor para o Text=""-->
+                        <!--O ListView ira fazer como um foreach para apresenta todos os dados 
+                        da lista-->
+                        <!--O dados Binding é muito importante com eles iramos pegar os valores da classe
+                        para colocarmos na ListView-->
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </ContentPage.Content>
+</ContentPage>

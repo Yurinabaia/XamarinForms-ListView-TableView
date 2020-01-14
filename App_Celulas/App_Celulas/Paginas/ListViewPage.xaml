@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App_Celulas.Paginas.ListViewPage">
+    <ContentPage.Content>
+        <!--Todo ListView possuir um ListViewTemplate e um DataTemplate-->
+        <ListView x:Name="ListaFuncionario" ItemSelected="ItemSelecionado">
+            <!--A propriedade ItemSelected é um evento, que é acionado quando
+            usuario selecionarquando usuario clickar em um elemento da lista
+            SelectedItem="" depois que ItemSelected foi selecionado, dando para aparecer 
+            o valor que foi selecionado, quando usamos o SelectedItem normamente quando
+            selecionamos o item e ficaremos na mesma pagina-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}" Detail="{Binding Cargo}">
+                        <!--ContextActions BASICAMENTE POSSUIR EM TODAS AS CELULAR
+                        A FUNÇÃO DELE E ACRESCENTAR BOTOES OU FUNÇÃO PARA NOSSO REGISTRO-->
+                        <TextCell.ContextActions>
+                            <!--O menuItem é a tag para colocar os botoes-->
+                            <MenuItem Text="Ferias" Clicked="FeriasAction" CommandParameter="{Binding .}"/>
+                            <!--O recurso CommandParameter serve para saber qual objeto foi
+                            selecionado na lista, dentro do CommandParameter usar o Bindig . significa
+                            que todo objeto da classe funcionario vai ter propriedade-->
+                            <MenuItem Text="Abono" Clicked="AbonoAction" Command="{Binding .}"/>
+                            <!--Os MenuItem seria como um botão que depois se clickado
+                            ira realizar uma ação-->
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
